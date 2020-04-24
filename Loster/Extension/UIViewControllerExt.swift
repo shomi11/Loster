@@ -71,6 +71,7 @@ extension UIViewControllerPresenting where Self: UIViewController {
 
 extension UIViewController {
     
+    // configure navigation bar for ios 13
     func configureNavigationBar(largeTitleColor: UIColor, backgoundColor: UIColor, tintColor: UIColor, title: String, preferredLargeTitle: Bool) {
         let navBarAppearance = UINavigationBarAppearance()
         navBarAppearance.configureWithOpaqueBackground()

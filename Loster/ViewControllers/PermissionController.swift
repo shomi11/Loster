@@ -54,12 +54,11 @@ class PermissionController: UIViewController {
         if authorized == false {
             requestPhotosPermission()
         } else {
-            if let vc = storyboard?.instantiateViewController(identifier: "LostStuffTableController") {
-                let nav = UINavigationController(rootViewController: vc)
-                nav.modalPresentationStyle = .fullScreen
-                UserDefaults.standard.set(true, forKey: "permissions")
-                navigationController?.present(nav, animated: true, completion: nil)
-            }
+            let vc = LostStuffTableController.instantiate(from: "Main")
+            let nav = UINavigationController(rootViewController: vc)
+            nav.modalPresentationStyle = .fullScreen
+            UserDefaults.standard.set(true, forKey: "permissions")
+            navigationController?.present(nav, animated: true, completion: nil)
         }
     }
     
